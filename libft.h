@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 15:02:07 by                   #+#    #+#             */
-/*   Updated: 2016/09/02 01:33:52 by                  ###   ########.fr       */
+/*   Updated: 2016/09/02 15:51:12 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strnew(size_t size);
 char	*ft_strmap(char const *s, char (*f)(char));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+int	ft_strequ(char const *s1, char const *s2);
+int	ft_strnequ(char const *s1, char const *s2, size_t n);
 
 #endif
