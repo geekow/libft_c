@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 15:02:07 by                   #+#    #+#             */
-/*   Updated: 2016/09/07 17:29:13 by                  ###   ########.fr       */
+/*   Updated: 2016/09/07 18:01:06 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int	ft_isascii(int c);
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
+int	ft_atoi(const char *nptr);
 
 #endif
