@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 15:02:07 by                   #+#    #+#             */
-/*   Updated: 2016/09/06 23:43:57 by                  ###   ########.fr       */
+/*   Updated: 2016/09/07 16:48:48 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char	*ft_itoa(int n);
 char	**ft_strsplit(char const *s, char c);
 int	ft_strequ(char const *s1, char const *s2);
 int	ft_strnequ(char const *s1, char const *s2, size_t n);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 
 #endif
