@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/08/30 14:49:48 by                   #+#    #+#             *#
-#*   Updated: 2016/09/07 16:51:25 by                  ###   ########.fr       *#
+#*   Updated: 2016/09/07 17:28:33 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -15,7 +15,8 @@ SRC = ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c \
 	ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c \
 	ft_itoa.c ft_putendl.c ft_putnbr.c ft_putendl_fd.c ft_putnbr_fd.c \
-	ft_tolower.c ft_toupper.c
+	ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
+	ft_isalpha.c ft_isdigit.c
 OBJ = $(SRC:.c=.o)
 NAME = libft.a
 

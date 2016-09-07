@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/30 15:02:07 by                   #+#    #+#             */
-/*   Updated: 2016/09/07 16:48:48 by                  ###   ########.fr       */
+/*   Updated: 2016/09/07 17:29:13 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,10 @@ int	ft_strequ(char const *s1, char const *s2);
 int	ft_strnequ(char const *s1, char const *s2, size_t n);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
+int	ft_isprint(int c);
+int	ft_isascii(int c);
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isdigit(int c);
 
 #endif
