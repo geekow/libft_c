@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 19:14:05 by                   #+#    #+#             */
-/*   Updated: 2016/09/08 22:33:08 by                  ###   ########.fr       */
+/*   Updated: 2016/09/08 22:45:34 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ char	*ft_strstr(const char *haystack, const char *needle)
 	size_t	index_tf;
 
 	index_str = 0;
-	if (!needle)
+	if (needle[0] == '\0')
 		return ((char*)haystack);
-	if (!haystack)
-		return (NULL);
 	while (haystack[index_str] != '\0')
 	{
 		index_tf = 0;
@@ -30,5 +28,5 @@ char	*ft_strstr(const char *haystack, const char *needle)
 				return ((char*)&haystack[index_str]);
 		index_str++;
 	}
-	return (NULL);
+	return ((char*)0);
 }
