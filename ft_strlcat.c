@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 21:25:28 by                   #+#    #+#             */
-/*   Updated: 2016/09/08 04:18:53 by                  ###   ########.fr       */
+/*   Updated: 2016/09/08 21:18:09 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t count)
 	dest += dest_l;
 	if (src_l > count)
 		src_l = count - 1;
-	dest = (char*)ft_memcpy(dest, src, src_l);
+	dest = (char*)ft_memcpy(dest, src, --src_l);
 	dest[src_l] = '\0';
 	return (result);
 }
