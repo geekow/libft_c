@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/07 21:25:28 by                   #+#    #+#             */
-/*   Updated: 2016/09/08 01:05:48 by                  ###   ########.fr       */
+/*   Updated: 2016/09/08 04:18:53 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t count)
 	result = strlen(dest) + strlen(src);
 	dest_l = ft_strlen(dest);
 	src_l = ft_strlen(src);
-	if (count <= dest_l)
+	if (count < dest_l)
 		return (src_l + count);
 	count -= dest_l;
 	dest += dest_l;
