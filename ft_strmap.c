@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/01 23:08:26 by                   #+#    #+#             */
-/*   Updated: 2016/09/02 15:43:26 by                  ###   ########.fr       */
+/*   Updated: 2016/10/06 01:07:58 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t		i;
 
 	i = 0;
+	if (s == NULL || f == NULL)
+		return (NULL);
 	result = (char*)malloc(sizeof(s));
 	if (!result)
 		return (NULL);
