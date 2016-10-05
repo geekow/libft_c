@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/02 16:54:59 by                   #+#    #+#             */
-/*   Updated: 2016/09/02 17:50:37 by                  ###   ########.fr       */
+/*   Updated: 2016/10/05 17:43:32 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strtrim(char const *s)
 			end = i;
 		i++;
 	}
-	if (s[start] == '\0')
-		return (NULL);
-	else
+	if (start != end)
 		return (ft_strsub(s, start, ++end - start));
+	else
+		return ("");
 }
