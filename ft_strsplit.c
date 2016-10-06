@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/02 20:37:44 by                   #+#    #+#             */
-/*   Updated: 2016/09/08 20:12:35 by                  ###   ########.fr       */
+/*   Updated: 2016/10/06 01:40:43 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	**ft_strsplit(char const *s, char c)
 	size_t	w_max;
 	size_t	i;
 
+	if (s == NULL)
+		return (NULL);
 	w_max = str_nbrs(s, c);
 	result = (char**)malloc(sizeof(**result));
 	if (!result)

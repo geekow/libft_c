@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/02 15:51:33 by                   #+#    #+#             */
-/*   Updated: 2016/09/02 16:07:10 by                  ###   ########.fr       */
+/*   Updated: 2016/10/06 01:18:19 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	result = (char*)malloc(sizeof(*result) * len);
-	if (!result)
+	if (!result || s == NULL)
 		return (NULL);
 	i = 0;
 	while (s[i] != '\0' && i < start)
