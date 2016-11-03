@@ -6,13 +6,13 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 22:49:17 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/03 23:09:16 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/03 23:30:38 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	result_table(char charact)
+static int	result_table(char charact)
 {
 	if ('0' <= charact && charact <= '9')
 		return (1);
@@ -29,7 +29,7 @@ int	result_table(char charact)
 		return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
 	int index;
 	int multiplicator;

@@ -6,13 +6,13 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 22:53:22 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/03 22:53:27 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/03 23:31:50 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	get_size(int n)
+static size_t	get_size(int n)
 {
 	size_t	result;
 
@@ -30,7 +30,7 @@ size_t	get_size(int n)
 	return (result);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*result;
 	size_t	i;
