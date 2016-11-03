@@ -6,13 +6,13 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:04:32 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/03 23:19:45 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/03 23:33:23 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	str_nbrs(char const *s, char c)
+static size_t	str_nbrs(char const *s, char c)
 {
 	size_t	i;
 	size_t	result;
@@ -32,7 +32,7 @@ size_t	str_nbrs(char const *s, char c)
 	return (result);
 }
 
-char	*str_to_put(char const *s, char c, size_t *i)
+static char		*str_to_put(char const *s, char c, size_t *i)
 {
 	char	*result;
 	size_t	j;
@@ -56,7 +56,7 @@ char	*str_to_put(char const *s, char c, size_t *i)
 	return (result);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**result;
 	size_t	w;
