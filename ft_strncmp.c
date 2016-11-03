@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/07 18:18:36 by                   #+#    #+#             */
-/*   Updated: 2016/10/06 00:07:16 by                  ###   ########.fr       */
+/*   Created: 2016/11/03 23:02:44 by jjacobi           #+#    #+#             */
+/*   Updated: 2016/11/03 23:16:21 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	index;
-	int	result;
+	int		result;
 
 	result = 0;
 	index = 0;

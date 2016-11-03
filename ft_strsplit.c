@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/02 20:37:44 by                   #+#    #+#             */
-/*   Updated: 2016/10/06 01:40:43 by                  ###   ########.fr       */
+/*   Created: 2016/11/03 23:04:32 by jjacobi           #+#    #+#             */
+/*   Updated: 2016/11/03 23:19:45 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ size_t	str_nbrs(char const *s, char c)
 
 	i = 0;
 	result = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
-		while(s[i] == c)
+		while (s[i] == c)
 			i++;
 		if (s[i] == '\0')
 			return (result);
-		while(s[i] != '\0' && s[i] != c)
+		while (s[i] != '\0' && s[i] != c)
 			i++;
 		result += 1;
 	}
@@ -74,9 +74,9 @@ char	**ft_strsplit(char const *s, char c)
 		return (NULL);
 	w = 0;
 	i = 0;
-	while(w < w_max)
+	while (w < w_max)
 	{
-		result[w] = str_to_put(s, c , &i);
+		result[w] = str_to_put(s, c, &i);
 		if (result[w] == NULL)
 			return (NULL);
 		w++;

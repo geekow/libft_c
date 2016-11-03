@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/07 17:59:16 by                   #+#    #+#             */
-/*   Updated: 2016/09/07 18:08:21 by                  ###   ########.fr       */
+/*   Created: 2016/11/03 22:49:17 by jjacobi           #+#    #+#             */
+/*   Updated: 2016/11/03 23:09:16 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		result_table(char charact)
+int	result_table(char charact)
 {
 	if ('0' <= charact && charact <= '9')
 		return (1);
@@ -28,7 +28,6 @@ int		result_table(char charact)
 	else
 		return (0);
 }
-
 
 int	ft_atoi(const char *nptr)
 {

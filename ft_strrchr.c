@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/08 01:30:30 by                   #+#    #+#             */
-/*   Updated: 2016/09/08 01:33:34 by                  ###   ########.fr       */
+/*   Created: 2016/11/03 23:04:15 by jjacobi           #+#    #+#             */
+/*   Updated: 2016/11/03 23:18:09 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 	char	*ptr;
 
 	i = ft_strlen(s);
-	while(i > 0)
+	while (i > 0)
 	{
 		if (s[i] == (char)c)
 		{
@@ -34,4 +34,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
