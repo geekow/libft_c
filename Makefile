@@ -22,19 +22,18 @@ SRC_FILES = ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_strchr.c ft_strrchr.c ft_memset.c ft_bzero.c ft_memccpy.c \
 	ft_memmove.c ft_memchr.c ft_memcmp.c
 SRC_FOLDER = ./srcs/
-SRC = $(addprefix $(SRC_FOLDER), $(SRC_FILES))
 INCLUDE_FOLDER = ./includes
 OBJ = $(SRC_FILES:.c=.o)
 NAME = libft.a
 
-all: make
+all: $(NAME)
 
-$(NAME): make
+$(NAME): $(OBJ)
+	ar rc $@ $^
+	ar -s $@
 
-make:
-	gcc -Wall -Werror -Wextra -c $(SRC) -I $(INCLUDE_FOLDER)
-	ar rc $(NAME) $(OBJ)
-	ar -s $(NAME)
+%.o: $(addprefix $(SRC_FOLDER), %.c)
+	gcc -Wall -Werror -Wextra -c -o $@ $< -I $(INCLUDE_FOLDER)
 
 clean:
 	rm -rf $(OBJ)
@@ -42,5 +41,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean make
+re: fclean all
 
+.PHONY: clean
