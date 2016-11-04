@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:05:19 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/03 23:18:45 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/04 18:20:12 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ char	*ft_strtrim(char const *s)
 	if (start != end)
 		return (ft_strsub(s, start, ++end - start));
 	else
-		return ("");
+		return (ft_strdup(""));
 }
