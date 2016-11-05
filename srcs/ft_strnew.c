@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:03:19 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/03 23:16:49 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/05 15:36:53 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnew(size_t size)
 	char	*result;
 	size_t	i;
 
-	result = (char*)malloc(sizeof(*result) * size);
+	result = (char*)malloc(sizeof(*result) * (size + 1));
 	if (result)
 	{
 		i = 0;
