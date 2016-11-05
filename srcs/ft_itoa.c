@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 22:53:22 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/03 23:31:50 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/05 16:42:23 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char			*ft_itoa(int n)
 	size_t	i;
 
 	i = get_size(n);
-	result = (char*)malloc(sizeof(*result) * i);
+	result = (char*)malloc(sizeof(*result) * (i + 1));
 	if (!result)
 		return (NULL);
 	if (n < 0)
