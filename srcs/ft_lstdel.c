@@ -6,7 +6,7 @@
 /*   By:  <>                                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:16:49 by                   #+#    #+#             */
-/*   Updated: 2016/11/06 15:27:08 by                  ###   ########.fr       */
+/*   Updated: 2016/11/06 15:35:38 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void  ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 	while (*alst)
 	{
 		if (del)
-			del(*alst->content, alst.content_size);
-		cache = *alst->next;
+			del((*alst)->content, (*alst)->content_size);
+		cache = (*alst)->next;
 		free(*alst);
-		*alst = cache;
+		(*alst) = cache;
 	}
 	*alst = NULL;
 }
