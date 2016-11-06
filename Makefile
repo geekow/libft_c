@@ -6,7 +6,7 @@
 #*   By:  <>                                        +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2016/08/30 14:49:48 by                   #+#    #+#             *#
-#*   Updated: 2016/11/06 15:54:12 by                  ###   ########.fr       *#
+#*   Updated: 2016/11/06 16:15:59 by                  ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -21,7 +21,7 @@ SRC_FILES = ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c ft_memcpy.c \
 	ft_strchr.c ft_strrchr.c ft_memset.c ft_bzero.c ft_memccpy.c \
 	ft_memmove.c ft_memchr.c ft_memcmp.c ft_lstnew.c ft_lstdelone.c \
-	ft_lstdel.c ft_lstadd.c
+	ft_lstdel.c ft_lstadd.c ft_lstiter.c
 SRC_FOLDER = ./srcs/
 INCLUDE_FOLDER = ./includes
 OBJ = $(SRC_FILES:.c=.o)
