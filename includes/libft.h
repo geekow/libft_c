@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:05:59 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/05 16:55:11 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/06 14:15:42 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int					ft_strcmp(const char *s1, const char *s2);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dest, const char *src, size_t count);
+t_list				*ft_lstnew(void const *content, size_t content_size);
 
 typedef	struct		s_list
 {
