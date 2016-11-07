@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:05:56 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 11:07:49 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/07 12:08:11 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 void	ft_lstadd(t_list **alst, t_list *new)
 {
 	if (new && (*alst) && alst)
-	{
 		new->next = *alst;
-		*alst = new;
-	}
+	*alst = new;
 }

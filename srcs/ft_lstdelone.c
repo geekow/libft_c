@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:06:22 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 11:08:19 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/07 11:55:09 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 	{
 		if (del)
 			del((*alst)->content, (*alst)->content_size);
-		free(alst);
-		alst = NULL;
+		free(*alst);
+		*alst = NULL;
 	}
 }
