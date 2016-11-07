@@ -6,7 +6,7 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/11/07 11:03:00 by jjacobi          ###   ########.fr        #
+#    Updated: 2016/11/07 14:30:43 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,6 @@ SRC_FILES = ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_strchr.c ft_strrchr.c ft_memset.c ft_bzero.c ft_memccpy.c \
 	ft_memmove.c ft_memchr.c ft_memcmp.c ft_lstnew.c ft_lstdelone.c \
 	ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c
-SRC_FOLDER = ./srcs/
-INCLUDE_FOLDER = ./includes
 OBJ = $(SRC_FILES:.c=.o)
 NAME = libft.a
 
@@ -33,8 +31,8 @@ $(NAME): $(OBJ)
 	ar rc $@ $^
 	ar -s $@
 
-%.o: $(addprefix $(SRC_FOLDER), %.c)
-	gcc -Wall -Werror -Wextra -c -o $@ $< -I $(INCLUDE_FOLDER)
+%.o: $(%.c)
+	gcc -Wall -Werror -Wextra -c -o $@ $<
 
 clean:
 	rm -rf $(OBJ)
