@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By:  <>                                        +#+  +:+       +#+        */
+/*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 15:49:58 by                   #+#    #+#             */
-/*   Updated: 2016/11/06 16:13:06 by                  ###   ########.fr       */
+/*   Created: 2016/11/07 11:05:56 by jjacobi           #+#    #+#             */
+/*   Updated: 2016/11/07 11:07:49 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void  ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
 	if (new && (*alst) && alst)
 	{
