@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:05:59 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 19:24:58 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/07 19:37:41 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_sort_wordtab(char **tab, int (*cmp)(char *, char *));
-void				ft_list_sort(t_list **begin_list, int (*cmp)(char *a,
+void				ft_lstsort(t_list **begin_list, int (*cmp)(char *a,
 																	char *b));
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
@@ -70,6 +70,7 @@ char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				**ft_strsplit(char const *s, char c);
 char				**ft_split_whitespaces(char *str);
+int					ft_power(int nb, int power);
 int					ft_sqrt(int nb);
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);

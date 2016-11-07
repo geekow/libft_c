@@ -6,13 +6,13 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 19:12:06 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 19:23:45 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/07 19:37:13 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_list_sort(t_list **begin_list, int (*cmp)(char *a, char *b))
+void	ft_lstsort(t_list **begin_list, int (*cmp)(char *a, char *b))
 {
 	t_list	*list;
 	t_list	*cache;
