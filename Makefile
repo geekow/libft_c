@@ -6,11 +6,14 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/11/07 19:36:28 by jjacobi          ###   ########.fr        #
+#    Updated: 2016/11/08 19:49:18 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILES = ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
+NAME		= libft.a
+CC			= gcc
+FLAGS		= -Wall -Wextra -Werror
+SRC_FILES	= ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_strnew.c ft_strdel.c ft_memdel.c ft_memalloc.c \
 	ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c \
 	ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
@@ -23,24 +26,32 @@ SRC_FILES = ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_memmove.c ft_memchr.c ft_memcmp.c ft_lstnew.c ft_lstdelone.c \
 	ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_sqrt.c \
 	ft_split_whitespaces.c ft_sort_wordtab.c ft_lstsort.c ft_power.c
-OBJ = $(SRC_FILES:.c=.o)
-NAME = libft.a
+OBJ			= $(SRC_FILES:.c=.o)
+
+GREEN		= \033[32m
+RED			= \033[31m
+DEFAULT		= \033[37m
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $@ $^
-	ar -s $@
+	@printf "\n$(DEFAULT)"
+	@ar rc $@ $^
+	@ar -s $@
+	@echo "$(GREEN)$(NAME)$(DEFAULT) created."
 
 %.o: %.c
-	gcc -Wall -Werror -Wextra -c -o $@ $<
+	@$(CC) $(FLAGS) -c -o $@ $<
+	@printf "$(GREEN)[OK] "
 
 clean:
-	rm -rf $(OBJ)
+	@rm -rf $(OBJ)
+	@echo "All $(RED).o$(DEFAULT) are now deleted."
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "$(RED)$(NAME)$(DEFAULT) is now deleted."
 
 re: fclean all
 
-.PHONY: clean
+.PHONY: clean fclean re all
