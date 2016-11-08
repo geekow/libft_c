@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:05:59 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 19:37:41 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/08 13:51:34 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_sort_wordtab(char **tab, int (*cmp)(char *, char *));
+void				ft_sort_wordtab(char **tab, int (*cmp)(const char *,
+																const char *));
 void				ft_lstsort(t_list **begin_list, int (*cmp)(char *a,
 																	char *b));
 void				*ft_memchr(const void *s, int c, size_t n);

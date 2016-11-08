@@ -6,13 +6,14 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:52:49 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 19:00:06 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/08 13:51:12 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	sort(int counter, char **tab, int (*cmp)(char *, char *))
+static void	sort(int counter, char **tab, int (*cmp)(const char *,
+															const char *))
 {
 	char	*temp;
 	int		i_1;
@@ -37,7 +38,8 @@ static void	sort(int counter, char **tab, int (*cmp)(char *, char *))
 	}
 }
 
-void		ft_sort_wordtab(char **tab, int (*cmp)(char *, char *))
+void		ft_sort_wordtab(char **tab, int (*cmp)(const char *,
+															const char *))
 {
 	int i;
 
