@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:36:46 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/07 18:38:46 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/08 15:39:50 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ char		**ft_split_whitespaces(char *str)
 	int		j;
 	int		result;
 
-	tab = (char**)malloc(sizeof(long));
+	tab = (char**)malloc(sizeof(tab));
 	j = 0;
 	i = define_char_table(str, tab);
 	i_word = -1;
