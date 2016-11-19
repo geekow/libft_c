@@ -6,7 +6,7 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/11/08 19:49:18 by jjacobi          ###   ########.fr        #
+#    Updated: 2016/11/19 15:19:14 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,14 +35,14 @@ DEFAULT		= \033[37m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@printf "\n$(DEFAULT)"
+	@echo "$(DEFAULT)"
 	@ar rc $@ $^
 	@ar -s $@
 	@echo "$(GREEN)$(NAME)$(DEFAULT) created."
 
 %.o: %.c
 	@$(CC) $(FLAGS) -c -o $@ $<
-	@printf "$(GREEN)[OK] "
+	@echo "$(GREEN). \c"
 
 clean:
 	@rm -rf $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:01:31 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/05 15:32:05 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/19 17:14:51 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,13 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t count)
 {
-	size_t	result;
-	size_t	dest_l;
-	size_t	src_l;
+	size_t	len_dest;
 
-	result = ft_strlen(dest) + ft_strlen(src);
-	dest_l = ft_strlen(dest);
-	src_l = ft_strlen(src);
-	if (count < dest_l)
-		return (src_l + count);
-	count -= dest_l;
-	dest += dest_l;
-	if (src_l > count)
-		src_l = count;
-	dest = (char*)ft_memcpy(dest, src, src_l);
-	if (src_l >= count)
-		dest[src_l - 1] = '\0';
-	else
-		dest[src_l] = '\0';
-	return (result);
+	len_dest = ft_strlen(dest);
+	if (count <= len_dest)
+		return (ft_strlen(src) + count);
+	if (count == (len_dest + 1))
+		return (len_dest + ft_strlen(src));
+	ft_strncat(dest, src, (count - len_dest - 1));
+	return (len_dest + ft_strlen(src));
 }

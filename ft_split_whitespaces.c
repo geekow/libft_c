@@ -6,77 +6,72 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 18:36:46 by jjacobi           #+#    #+#             */
-/*   Updated: 2016/11/08 15:39:50 by jjacobi          ###   ########.fr       */
+/*   Updated: 2016/11/19 16:57:34 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	define_char_table(char *str, char **to_treat)
+static size_t	get_tab_size(char const *s)
 {
-	char	*tab;
-	int		i;
-	int		sep;
-	int		word_counter;
+	size_t	i;
+	size_t	result;
 
 	i = 0;
-	word_counter = 0;
-	sep = 0;
-	while (str[i] != '\0')
+	result = 0;
+	while (s[i] != '\0')
 	{
-		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
-			sep = 1;
-		else
-		{
-			if (sep == 1)
-				word_counter += 1;
-			sep = 0;
-		}
-		i++;
-	}
-	tab = (char*)malloc(sizeof(*to_treat) * (word_counter + 1));
-	*to_treat = tab;
-	return (0);
-}
-
-static int	next_word_size(char *str)
-{
-	int size;
-
-	size = 0;
-	while (str[size] != ' ' && str[size] != '\n' && str[size] != '\t' &&
-			str[size] != '\0')
-	{
-		size++;
-	}
-	return (size);
-}
-
-char		**ft_split_whitespaces(char *str)
-{
-	char	**tab;
-	int		i;
-	int		i_word;
-	int		j;
-	int		result;
-
-	tab = (char**)malloc(sizeof(tab));
-	j = 0;
-	i = define_char_table(str, tab);
-	i_word = -1;
-	while (str[i] != '\0')
-		if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
-		{
-			result = next_word_size(str + i);
-			tab[j] = (char*)malloc(sizeof(*str) * result);
-			while (++i_word < result)
-				tab[j][i_word] = str[i + i_word];
-			tab[j++][i_word] = '\0';
-			i += i_word;
-			i_word = -1;
-		}
-		else
+		while (s[i] == 32 || (9 <= s[i] && s[i] <= 13))
 			i++;
-	tab[j] = 0;
-	return (tab);
+		if (s[i] == '\0')
+			return (result);
+		while (s[i] != '\0' && !(s[i] == 32 || (9 <= s[i] && s[i] <= 13)))
+			i++;
+		result += 1;
+	}
+	return (result);
+}
+
+static char		*str_to_put(char const *s, size_t *i)
+{
+	char	*result;
+	size_t	j;
+	size_t	k;
+
+	while (s[*i] != '\0' && (s[*i] == 32 || (9 <= s[*i] && s[*i] <= 13)))
+		*i += 1;
+	j = *i;
+	k = j;
+	while (s[*i] != '\0' && !(s[*i] == 32 || (9 <= s[*i] && s[*i] <= 13)))
+		*i += 1;
+	if ((result = (char*)malloc(sizeof(*result) * (*i - j))) == NULL)
+		return (NULL);
+	while (j < *i)
+	{
+		result[j - k] = s[j];
+		j++;
+	}
+	result[j - k] = '\0';
+	return (result);
+}
+
+char			**ft_split_whitespaces(char *str)
+{
+	char	**result;
+	size_t	w;
+	size_t	w_max;
+	size_t	i;
+
+	if (str == NULL)
+		return (NULL);
+	w_max = get_tab_size(str);
+	if ((result = (char**)malloc(sizeof(*result) * (w_max + 1))) == NULL)
+		return (NULL);
+	w = 0;
+	i = 0;
+	while (w < w_max)
+		if ((result[w++] = str_to_put(str, &i)) == NULL)
+			return (NULL);
+	result[w] = 0;
+	return (result);
 }
