@@ -6,14 +6,14 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/11/19 15:19:14 by jjacobi          ###   ########.fr        #
+#    Updated: 2016/11/24 19:25:35 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libft.a
 CC			= gcc
 FLAGS		= -Wall -Wextra -Werror
-SRC_FILES	= ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
+SRCS_FILES	= ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_strnew.c ft_strdel.c ft_memdel.c ft_memalloc.c \
 	ft_strclr.c ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c \
 	ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c \
@@ -26,7 +26,10 @@ SRC_FILES	= ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_memmove.c ft_memchr.c ft_memcmp.c ft_lstnew.c ft_lstdelone.c \
 	ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_sqrt.c \
 	ft_split_whitespaces.c ft_sort_wordtab.c ft_lstsort.c ft_power.c
-OBJ			= $(SRC_FILES:.c=.o)
+OBJS		= $(SRCS_FILES:.c=.o)
+
+H_DIR		= ./includes
+SRCS_FOLDER	= ./srcs/
 
 GREEN		= \033[32m
 RED			= \033[31m
@@ -34,19 +37,19 @@ DEFAULT		= \033[37m
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJS)
 	@echo "$(DEFAULT)"
 	@ar rc $@ $^
 	@ar -s $@
 	@echo "$(GREEN)$(NAME)$(DEFAULT) created."
 
-%.o: %.c
-	@$(CC) $(FLAGS) -c -o $@ $<
+%.o: $(addprefix $(SRCS_FOLDER), %.c)
+	@$(CC) $(FLAGS) -c -o $@ $< -I $(H_DIR)
 	@echo "$(GREEN). \c"
 
 clean:
-	@rm -rf $(OBJ)
-	@echo "All $(RED).o$(DEFAULT) are now deleted."
+	@rm -rf $(OBJS)
+	@echo "All $(RED).o$(DEFAULT) are now deleted for $(NAME)."
 
 fclean: clean
 	@rm -rf $(NAME)
