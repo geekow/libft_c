@@ -6,7 +6,7 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/11/24 19:25:35 by jjacobi          ###   ########.fr        #
+#    Updated: 2016/12/05 20:26:10 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,8 @@ SRCS_FILES	= ft_putchar.c ft_putstr.c ft_strlen.c ft_putchar_fd.c \
 	ft_strchr.c ft_strrchr.c ft_memset.c ft_bzero.c ft_memccpy.c \
 	ft_memmove.c ft_memchr.c ft_memcmp.c ft_lstnew.c ft_lstdelone.c \
 	ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_sqrt.c \
-	ft_split_whitespaces.c ft_sort_wordtab.c ft_lstsort.c ft_power.c
+	ft_split_whitespaces.c ft_sort_wordtab.c ft_lstsort.c ft_power.c \
+	get_next_line.c
 OBJS		= $(SRCS_FILES:.c=.o)
 
 H_DIR		= ./includes
