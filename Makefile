@@ -6,7 +6,7 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/12/05 20:26:10 by jjacobi          ###   ########.fr        #
+#    Updated: 2016/12/08 16:04:37 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,25 +36,31 @@ GREEN		= \033[32m
 RED			= \033[31m
 DEFAULT		= \033[37m
 
+ifeq ($(shell uname),Darwin)
+	ECHO = echo
+else
+	ECHO = echo -e
+endif
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "$(DEFAULT)"
+	@$(ECHO) "$(DEFAULT)"
 	@ar rc $@ $^
 	@ar -s $@
-	@echo "$(GREEN)$(NAME)$(DEFAULT) created."
+	@$(ECHO) "$(GREEN)$(NAME)$(DEFAULT) created."
 
 %.o: $(addprefix $(SRCS_FOLDER), %.c)
 	@$(CC) $(FLAGS) -c -o $@ $< -I $(H_DIR)
-	@echo "$(GREEN). \c"
+	@$(ECHO) "$(GREEN). \c"
 
 clean:
 	@rm -rf $(OBJS)
-	@echo "All $(RED).o$(DEFAULT) are now deleted for $(NAME)."
+	@$(ECHO) "All $(RED).o$(DEFAULT) are now deleted for $(NAME)."
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo "$(RED)$(NAME)$(DEFAULT) is now deleted."
+	@$(ECHO) "$(RED)$(NAME)$(DEFAULT) is now deleted."
 
 re: fclean all
 
