@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 23:05:59 by jjacobi           #+#    #+#             */
-/*   Updated: 2017/01/10 06:59:50 by jjacobi          ###   ########.fr       */
+/*   Updated: 2017/01/10 07:24:48 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef	struct		s_list
 }					t_list;
 
 void				ft_putchar(unsigned int c);
-void				ft_putchar_fd(char c, int fd);
+void				ft_putchar_fd(unsigned int c, int fd);
 void				ft_putstr(char const *s);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_strdel(char **as);
