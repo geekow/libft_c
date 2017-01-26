@@ -6,7 +6,7 @@
 #    By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/07 11:02:51 by jjacobi           #+#    #+#              #
-#    Updated: 2016/12/08 16:04:37 by jjacobi          ###   ########.fr        #
+#    Updated: 2017/01/26 01:52:36 by jjacobi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,14 +45,15 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@$(ECHO) "\r$(GREEN) The .o from $(NAME) are compiled.     \c\033[K"
 	@$(ECHO) "$(DEFAULT)"
 	@ar rc $@ $^
 	@ar -s $@
 	@$(ECHO) "$(GREEN)$(NAME)$(DEFAULT) created."
 
 %.o: $(addprefix $(SRCS_FOLDER), %.c)
+	@$(ECHO) "\r$(GREEN) Compiling $@                   \c\033[K"
 	@$(CC) $(FLAGS) -c -o $@ $< -I $(H_DIR)
-	@$(ECHO) "$(GREEN). \c"
 
 clean:
 	@rm -rf $(OBJS)
