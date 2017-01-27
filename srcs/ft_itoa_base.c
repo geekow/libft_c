@@ -6,20 +6,18 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:10:53 by jjacobi           #+#    #+#             */
-/*   Updated: 2017/01/27 17:50:45 by jjacobi          ###   ########.fr       */
+/*   Updated: 2017/01/27 22:47:15 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
-
 char	*ft_itoa_base(unsigned long long value, char *base)
 {
-	int		size;
-	int		tmp;
-	int		base_size;
-	char	*result;
+	int						size;
+	unsigned long long		tmp;
+	int						base_size;
+	char					*result;
 
 	tmp = value;
 	base_size = ft_strlen(base);
