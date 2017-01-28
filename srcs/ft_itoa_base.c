@@ -6,7 +6,7 @@
 /*   By: jjacobi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:10:53 by jjacobi           #+#    #+#             */
-/*   Updated: 2017/01/27 22:47:15 by jjacobi          ###   ########.fr       */
+/*   Updated: 2017/01/28 00:43:09 by jjacobi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ char	*ft_itoa_base(unsigned long long value, char *base)
 		tmp = tmp / base_size;
 		size++;
 	}
-	result = (char*)malloc(sizeof(char) * size);
+	result = (char*)malloc(sizeof(char) * (size + 1));
+	result[size] = '\0';
 	while ((value / base_size) > 0)
 	{
 		result[--size] = base[value % base_size];
